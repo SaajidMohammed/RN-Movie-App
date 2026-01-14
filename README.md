@@ -1,50 +1,78 @@
-# Welcome to your Expo app 👋
+A professional **README.md** is essential for documenting your tech stack, explaining how to handle the API integration, and detailing the Expo Router structure.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Here is a comprehensive README designed specifically for your **React Native Movie App**.
 
-## Get started
+---
 
-1. Install dependencies
+# 🎬 FLIX - TMDB Movie Discovery App
 
-   ```bash
-   npm install
-   ```
+A high-performance, minimalist movie discovery application built with **React Native** and **Expo Router**. This app features a high-density grid layout, real-time search with debouncing, and an offline-persistent watchlist.
 
-2. Start the app
+## 🚀 Features
 
-   ```bash
-   npx expo start
-   ```
+* **Minimalist Movie Grid:** A 3-column responsive grid maximizing content visibility.
+* **Real-time Search:** Optimized search functionality using custom debounce hooks to prevent API rate-limiting.
+* **Persistent Watchlist:** Save your favorite movies locally using **Zustand** and `AsyncStorage`.
+* **Dynamic Routing:** File-based routing for seamless navigation between Home, Search, and Details.
+* **Advanced Data Fetching:** Optimized server-state management with **TanStack Query** for automatic caching.
 
-In the output, you'll find options to open the app in a
+## 🛠️ Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* **Framework:** Expo (React Native)
+* **Navigation:** Expo Router (File-based)
+* **API:** TMDB (The Movie Database)
+* **State Management:** Zustand (with Persist middleware)
+* **Data Fetching:** TanStack Query & Axios
+* **Styling:** React Native StyleSheet
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📂 Project Structure
 
-## Get a fresh project
+```text
+/app                # Expo Router directory (Tabs & Dynamic Routes)
+/src
+  /api              # Axios configuration & TMDB services
+  /components       # Reusable UI (MovieCard, Loader)
+  /hooks            # Custom hooks (useHomeData, useDebounce)
+  /store            # Zustand global state (Favorites)
+  /types            # TypeScript interfaces for TMDB data
+  /utils            # Formatters (Date, Currency, Image URLs)
 
-When you're ready, run:
-
-```bash
-npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## ⚙️ Setup & Installation
 
-## Learn more
+### 1. Clone the repository
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+git clone https://github.com/yourusername/flix-movie-app.git
+cd flix-movie-app
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
 
-## Join the community
+### 2. Install dependencies
 
-Join our community of developers creating universal apps.
+```bash
+npm install
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+
+### 3. Configure TMDB API
+
+1. Obtain an **API Read Access Token** from [TMDB Settings](https://www.google.com/search?q=https://www.themoviedb.org/settings/api).
+2. Navigate to `src/api/axiosInstance.ts` and paste your token.
+
+### 4. Run the app
+
+```bash
+npx expo start
+
+```
+
+## 📦 Building for Production (APK)
+
+This project is configured for **EAS Build**. To generate an installable Android APK:
+
+1. Install EAS CLI: `npm install -g eas-cli`
+2. Login: `eas login`
+3. Build: `eas build -p android --profile preview`
+

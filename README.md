@@ -1,9 +1,3 @@
-A professional **README.md** is essential for documenting your tech stack, explaining how to handle the API integration, and detailing the Expo Router structure.
-
-Here is a comprehensive README designed specifically for your **React Native Movie App**.
-
----
-
 # 🎬 FLIX - TMDB Movie Discovery App
 
 A high-performance, minimalist movie discovery application built with **React Native** and **Expo Router**. This app features a high-density grid layout, real-time search with debouncing, and an offline-persistent watchlist.
